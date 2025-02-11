@@ -1,11 +1,10 @@
 # P&D ISSP base scripts
-_Last update: 2024 edition._
 This repository contains base scripts for the P&D ISSP KU Leuven course.
 
 Set things up:
 
 1. Make sure Git is installed on your machine.
-2. Clone the repository with `git clone https://github.com/p-didier/pandd2023-base` in the folder of your choice.
+2. Clone the repository with `git clone https://github.com/p-didier/panddissp-base` in the folder of your choice.
 3. Make sure Python 3.9 (or more recent) is installed on your machine.
 4. In the editor of your choice (e.g., Visual Studio Code), select the appropriate Python environment.
 5. Open a command line prompt (e.g., by typing `cmd` in the Windows search bar).  
