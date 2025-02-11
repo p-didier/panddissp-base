@@ -252,14 +252,15 @@ class RIRg_GUI:
                                 fname=fname,
                                 c=self.c,
                             )
-                            if self.RIRsAudio is not None and self.RIRsNoise is not None:
+                            if (len(self.audioCoords) > 0 and self.RIRsAudio is None) or\
+                                (len(self.noiseCoords) > 0 and self.RIRsNoise is None):
+                                print('RIRs computation failed. Please try again.')
+                            else:
                                 print('RIRs computed successfully. Saving as Pickle archive.')
                                 fullFname = fname + '.pkl.gz'
                                 pickle.dump(self, gzip.open(fullFname, 'wb'))
                                 print(f'RIRs saved in file: "{Path(fullFname).name}", in folder\n"{Path(fullFname).parent}"')
                                 print('You may close the GUI if not needed anymore!')
-                            else:
-                                print('RIRs computation failed. Please try again.')
                     else:
                         print('No microphones are present. Please place microphones and try again.')
                     # ===================================
