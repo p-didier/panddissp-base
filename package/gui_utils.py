@@ -59,8 +59,10 @@ class RIRg_GUI:
         # https://stackoverflow.com/a/10269828
         fields = sorted(list(self.__dict__.keys()), key=str.casefold)
         for field in fields:
-            if 'RIR' not in field:  # avoid printing the RIRs themselves
+            if field[:3] != 'RIR':  # avoid printing the RIRs themselves
                 strout += f'>> Field "{field}": {getattr(self, field)}\n'
+            else:
+                strout += f'>> Field "{field}": NumPy array of shape {getattr(self, field).shape}\n'
         return strout
         
     def run_window(self):
