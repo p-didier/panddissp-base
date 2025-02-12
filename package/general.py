@@ -82,14 +82,14 @@ def auto_choice_doa(doaEsts, asc: RIRg_GUI):
 
     oracleDOAtalkers = np.zeros(len(coordinatesTalkers))
     for ii in range(len(coordinatesTalkers)):
-        oracleDOAtalkers[ii] = np.arctan2(
+        oracleDOAtalkers[ii] = np.pi - np.arctan2(
             coordinatesMicArray[0] - coordinatesTalkers[ii][0],
             coordinatesMicArray[1] - coordinatesTalkers[ii][1]
         )
 
     oracleDOAnoises = np.zeros(len(coordinatesNoises))
     for ii in range(len(coordinatesNoises)):
-        oracleDOAnoises[ii] = np.arctan2(
+        oracleDOAnoises[ii] = np.pi - np.arctan2(
             coordinatesMicArray[0] - coordinatesNoises[ii][0],
             coordinatesMicArray[1] - coordinatesNoises[ii][1]
         )
